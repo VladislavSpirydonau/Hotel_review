@@ -1,4 +1,4 @@
-#Function for filling mising values in lat and lng columns with use of google maps API
+#Function for filling mising values in lat and lng columns with use of google maps API, in the end i don't need it but leave it here for later use
 from geopy.geocoders import GoogleV3
 import config
 import pandas as pd
