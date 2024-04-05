@@ -27,14 +27,21 @@ df['Tags'] = df['Tags'].apply(lambda x: [lemmatizer.lemmatize(word) for word in 
 
 # Define the final function.
 def hotel_choosing(country, expectation, top_n=5):
+    # If there country is not in the dataset the script will give back a message
+    if country.lower() not in df['Country'].unique():
+        print("Unfortunately, we don't currently operate in this location.")
+        return
     df_country = df[df['Country'] == country.lower()]
-    
     # Tokenize and lemmatize the description.
     description_tokens = set([lemmatizer.lemmatize(word) for word in word_tokenize(expectation.lower()) if not word in stopwords.words('english')])
     mask = df_country['Tags'].apply(lambda x: bool(set(x) & description_tokens))
     
     # Filter the dataframe using the mask.
     df_description = df_country[mask]
+    # If there is no hotel that meet expectation the script will give back a message
+    if df_description.empty:
+        print("Apologies, we couldn't find a hotel that matches your expectations at the moment.")
+        return
     # Filter out duplicate columns.
     df_description = df_description.drop(columns=['Tags', 'Country'])
     df_description = df_description.drop_duplicates()
