@@ -1,0 +1,37 @@
+Introduction
+This documentation serves as a guide to setting up and utilizing the Python Hotel Recommendation System. The system leverages Python programming language along with Pandas and NLTK libraries for data manipulation and natural language processing.
+
+Requirements
+Before running the script, ensure that you have the following prerequisites installed:
+
+Pandas v2.2.1: A powerful data manipulation library for Python.
+NLTK v3.8.1: A natural language processing library for Python.
+Installation
+Install Dependencies: Use the following commands to install the required dependencies:
+bash
+Copy code
+pip install pandas==2.2.1
+pip install nltk==3.8.1
+Setup
+Download Dataset: Download the dataset required for the system from the following link: Hotel Dataset. Place the downloaded dataset in the repository directory.
+Usage
+To utilize the Python Hotel Recommendation System, follow these steps:
+
+Run the Script: Execute the main Python script main.py using the following command:
+bash
+Copy code
+python main.py
+Input Destination Country: Upon running the script, you will be prompted to input the country of your destination. Choose from the available options: Netherlands, UK, France, Spain, Italy, Austria.
+
+Describe Your Expectations: After providing the destination country, describe your expectations for the trip when prompted.
+
+View Recommendations: The system will generate a list of top hotels in the specified country based on your input expectations.
+
+Example Usage
+bash
+Copy code
+$ python main.py
+Please choose a country for your destination: Netherlands
+Please describe what you expect from your trip: Luxury accommodation with scenic views
+Conclusion
+The Python Hotel Recommendation System provides a convenient way to find suitable hotel accommodations based on user preferences. By following the instructions outlined in this documentation, users can quickly set up and utilize the system to obtain personalized hotel recommendations.
